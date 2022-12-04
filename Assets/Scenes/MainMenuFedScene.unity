@@ -838,6 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93111fc192c588948a54881453c265e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _button: {fileID: 586734094}
 --- !u!1 &371068266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,8 @@ GameObject:
   - component: {fileID: 586734096}
   - component: {fileID: 586734095}
   - component: {fileID: 586734094}
+  - component: {fileID: 586734098}
+  - component: {fileID: 586734097}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1165,7 +1168,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 586734095}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734097}
+        m_TargetAssemblyTypeName: LoadGameSceneButton, Assembly-CSharp
+        m_MethodName: LoadGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &586734095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,6 +1219,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586734092}
   m_CullTransparentMesh: 1
+--- !u!114 &586734097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586734092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66275203b44c6db4296db13028333a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &586734098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586734092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953a949a879152446b5fb1f681ad15b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &599819420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1326,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 599819423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMinLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMaxLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &599819423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,6 +1557,7 @@ GameObject:
   - component: {fileID: 760000094}
   - component: {fileID: 760000093}
   - component: {fileID: 760000092}
+  - component: {fileID: 760000095}
   m_Layer: 5
   m_Name: EasyLvlButton
   m_TagString: Untagged
@@ -1565,7 +1629,67 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760000093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMinLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMaxLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMistakes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetSection
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Section1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 760000095}
+        m_TargetAssemblyTypeName: LoadGameSceneButton, Assembly-CSharp
+        m_MethodName: LoadGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &760000093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,6 +1728,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760000090}
   m_CullTransparentMesh: 1
+--- !u!114 &760000095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760000090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66275203b44c6db4296db13028333a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827967724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,6 +2233,7 @@ GameObject:
   - component: {fileID: 1190858521}
   - component: {fileID: 1190858520}
   - component: {fileID: 1190858519}
+  - component: {fileID: 1190858522}
   m_Layer: 5
   m_Name: MediumLvlButton
   m_TagString: Untagged
@@ -2164,11 +2301,71 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1190858520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetMinLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetMaxLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetMistakes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetSection
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Section2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1190858522}
+        m_TargetAssemblyTypeName: LoadGameSceneButton, Assembly-CSharp
+        m_MethodName: LoadGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1190858520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,6 +2404,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190858517}
   m_CullTransparentMesh: 1
+--- !u!114 &1190858522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190858517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66275203b44c6db4296db13028333a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1247167369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2706,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1329067847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMinLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMaxLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1329067847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2779,7 +3012,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454155978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMistakes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1454155978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3156,7 +3401,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1507920713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMistakes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1507920713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3607,6 +3864,7 @@ GameObject:
   - component: {fileID: 1668666100}
   - component: {fileID: 1668666099}
   - component: {fileID: 1668666098}
+  - component: {fileID: 1668666101}
   m_Layer: 5
   m_Name: HardLvlButton
   m_TagString: Untagged
@@ -3674,11 +3932,71 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1668666099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetMinLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetMaxLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetMistakes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsSetters, Assembly-CSharp
+        m_MethodName: SetSection
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Section3
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1668666101}
+        m_TargetAssemblyTypeName: LoadGameSceneButton, Assembly-CSharp
+        m_MethodName: LoadGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668666099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3717,6 +4035,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668666096}
   m_CullTransparentMesh: 1
+--- !u!114 &1668666101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668666096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66275203b44c6db4296db13028333a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676061475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,7 +4442,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1761784285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMinLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMaxLength
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1761784285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4654,7 +5008,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1955158061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586734098}
+        m_TargetAssemblyTypeName: DifficultyParametrsStorage, Assembly-CSharp
+        m_MethodName: SetMistakes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955158061
 MonoBehaviour:
   m_ObjectHideFlags: 0

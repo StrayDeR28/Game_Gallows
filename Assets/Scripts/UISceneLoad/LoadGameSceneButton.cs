@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartButton : MonoBehaviour
+public class LoadGameSceneButton : MonoBehaviour
 {
-    public void RestartLevel()
+    public void LoadGameScene()
     {
         SceneManager.LoadScene("GameOverScene");
     }
