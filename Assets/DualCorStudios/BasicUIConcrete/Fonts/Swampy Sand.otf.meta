@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6a77f7e12e7d5d346ba89e4cc55ece5b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Swampy
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a35e07ec8d36b3144957a86a963e5ef4, type: 3}
+  - {fileID: 12800000, guid: 327f967abd5834746a9a04b5f886fae9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
