@@ -20,4 +20,8 @@ public class DifficultyParametrsSetters : MonoBehaviour
     {
         StaticParametrHolder._section = value;
     }
+    public void SetlvlIndex(int value)
+    {
+        StaticParametrHolder._lvlIndex = value;
+    }
 }

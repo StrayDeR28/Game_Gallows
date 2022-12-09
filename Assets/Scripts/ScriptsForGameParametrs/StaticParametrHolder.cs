@@ -8,4 +8,10 @@ public static class StaticParametrHolder
     public static int _minlength = 4;
     public static int _maxlength = 6;
     public static string _section = "Section1";
+    public static int _lvlIndex;
+
+    public static void SetLvlIndexStatic(int value)
+    {
+        _lvlIndex = value;
+    }
 }
