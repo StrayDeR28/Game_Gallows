@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtounInteractable : MonoBehaviour
+public class ButtonInteractable : MonoBehaviour
 {
     [SerializeField] private Button _buttonMedium;
     [SerializeField] private Button _buttonHard;
     private int _levelComplete;
 
-    private void Awake()
+    private void Awake()//при переходе на сцену MainMenu значения сразу обновляются
     {
         SetInteractable();
     }
@@ -32,7 +32,7 @@ public class ButtounInteractable : MonoBehaviour
         _buttonMedium.interactable = false;
         _buttonHard.interactable = false;
         PlayerPrefs.DeleteKey("LevelComplete");
-        PlayerPrefs.DeleteKey("GameWon");//переместить при неообходимости очистку списка выигранных игр
-        PlayerPrefs.DeleteKey("GameLost");
+        //PlayerPrefs.DeleteKey("GameWon");//переместить в статистику  и удалить
+        //PlayerPrefs.DeleteKey("GameLost");
     }
 }

@@ -1040,6 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mistakes: 0
   _section: 
+  _lvlIndex: 0
   _text: {fileID: 778352839}
 --- !u!1 &1667130847
 GameObject:

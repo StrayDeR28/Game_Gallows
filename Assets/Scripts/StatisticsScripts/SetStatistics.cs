@@ -24,7 +24,7 @@ public class SetStatistics : MonoBehaviour
     }
     public void LoseGameLevel()
     {
-        int value2 = PlayerPrefs.GetInt("GameWon");
+        int value2 = PlayerPrefs.GetInt("GameLost");
         value2++;
         PlayerPrefs.SetInt("GameLost", value2);
     }
