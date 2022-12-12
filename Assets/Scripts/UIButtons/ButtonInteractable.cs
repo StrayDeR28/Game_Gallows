@@ -32,7 +32,5 @@ public class ButtonInteractable : MonoBehaviour
         _buttonMedium.interactable = false;
         _buttonHard.interactable = false;
         PlayerPrefs.DeleteKey("LevelComplete");
-        //PlayerPrefs.DeleteKey("GameWon");//переместить в статистику  и удалить
-        //PlayerPrefs.DeleteKey("GameLost");
     }
 }

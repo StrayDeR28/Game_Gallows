@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MistakesRender :  GameParametrsInterface//Класс будет Егора, перенести в его класс эту логику
+public class MistakesRender :  MonoBehaviour //Метод и поля будут в Builder-e, перенести туда
 {
     [SerializeField] private int _mistakes;
     [SerializeField] private string _section;
@@ -15,13 +15,13 @@ public class MistakesRender :  GameParametrsInterface//Класс будет Е�
     {
         GetDifficultyParametr();
     }
-    public override void GetDifficultyParametr()
+    public void GetDifficultyParametr()
     {
         _mistakes = StaticParametrHolder._mistakes;
         _text.GetComponent<Text>().text=(" " + _mistakes.ToString());//для дебага
         _section = StaticParametrHolder._section;
-        print("" + _section);//для дебага
+        print("section - " + _section);//для дебага
         _lvlIndex = StaticParametrHolder._lvlIndex;//для дебага
-        print(" "+ _lvlIndex);//для дебага
+        print("lvl index = "+ _lvlIndex);//для дебага
     }
 }

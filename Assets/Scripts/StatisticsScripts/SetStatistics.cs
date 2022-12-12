@@ -1,10 +1,40 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SetStatistics : MonoBehaviour
 {
+    private void Awake()
+    {
+        LastGameResult("Игра прервалась");
+    }
+    [SerializeField] private GameObject _builder;
     public void PassGameLevel()
+    {
+        LevelComplete();
+        CountWins();
+        LastGameResult("Победа");
+    }
+    public void LoseGameLevel()
+    {
+        CountDefeats();
+        LastGameResult("Поражение");
+    }
+
+    public void CountDefeats()
+    {
+        int value = PlayerPrefs.GetInt("GameLost");
+        value++;
+        PlayerPrefs.SetInt("GameLost", value);
+    }
+    public void CountWins()
+    {
+        int value = PlayerPrefs.GetInt("GameWon");
+        value++;
+        PlayerPrefs.SetInt("GameWon", value);
+    }
+    public void LevelComplete()
     {
         if (StaticParametrHolder._lvlIndex == 1)
         {
@@ -18,14 +48,9 @@ public class SetStatistics : MonoBehaviour
             PlayerPrefs.SetInt("LevelComplete", value);
             StaticParametrHolder.SetLvlIndexStatic(0);
         }
-        int value2 = PlayerPrefs.GetInt("GameWon");
-        value2++;
-        PlayerPrefs.SetInt("GameWon",value2);
     }
-    public void LoseGameLevel()
+    public void LastGameResult(string value)
     {
-        int value2 = PlayerPrefs.GetInt("GameLost");
-        value2++;
-        PlayerPrefs.SetInt("GameLost", value2);
+        PlayerPrefs.SetString("LastGameResult", value);
     }
 }
