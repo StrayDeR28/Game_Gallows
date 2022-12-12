@@ -7,6 +7,6 @@ public class LoadGameSceneButton : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameOverScene");
+        SceneManager.LoadScene("MainGameScene");
     }
 }

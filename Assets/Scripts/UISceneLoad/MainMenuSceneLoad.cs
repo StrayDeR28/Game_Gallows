@@ -7,6 +7,6 @@ public class MainMenuSceneLoad : MonoBehaviour
 {
     public void LoadScene()
     {
-        SceneManager.LoadScene("MainMenuFedScene");//Измени имя сцены на необходимое
+        SceneManager.LoadScene("MainMenu");//Измени имя сцены на необходимое
     }
 }
