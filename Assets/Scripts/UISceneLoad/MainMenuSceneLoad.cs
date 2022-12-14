@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuSceneLoad : MonoBehaviour
 {
-    public void LoadScene()
+    public void LoadMainMenuScene()
     {
-        SceneManager.LoadScene("MainMenu");//Измени имя сцены на необходимое
+        SceneManager.LoadScene("MainMenu");
     }
 }
