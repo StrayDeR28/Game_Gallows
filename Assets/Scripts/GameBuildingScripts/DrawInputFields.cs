@@ -2,11 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DrawInputFields : MonoBehaviour
-{   public GameObject forMistakes;
+{
+    [SerializeField] private GameObject gameWin;
+    public GameObject forMistakes;
     private string pword;
     [SerializeField] private GameObject[] fields;
     [SerializeField] private GameObject prefab;
     [SerializeField] private GameObject text;
+
+    private int rightCharacter;
 
 
 
@@ -29,7 +33,8 @@ public class DrawInputFields : MonoBehaviour
     }
 
     public void GetAlphabet(string character)
-    {
+    {   
+   
         if (pword.Contains(character))
         {
             int index = pword.IndexOf(character);
@@ -37,6 +42,7 @@ public class DrawInputFields : MonoBehaviour
             {
                 fields[index].GetComponent<Image>().sprite = GameObject.Find(character).GetComponent<Image>().sprite;
                 fields[index].GetComponent<Image>().color = Color.yellow;
+                rightCharacter++;
                 GameObject.Find(character).GetComponent<Image>().color = Color.green;
                 GameObject.Find(character).GetComponent<Button>().interactable = false;
                 index = pword.IndexOf(character, index + 1);
@@ -48,5 +54,12 @@ public class DrawInputFields : MonoBehaviour
             GameObject.Find(character).GetComponent<Button>().interactable = false;
             forMistakes.GetComponent<Mistakes>().drawElements();
         }
+
+        if (rightCharacter == pword.Length)
+        {
+            gameWin.SetActive(true);
+            gameObject.GetComponent<SetStatistics>().PassGameLevel();
+        }
+
     }
 }

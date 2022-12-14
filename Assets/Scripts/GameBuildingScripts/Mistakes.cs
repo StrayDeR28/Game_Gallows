@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mistakes : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject gameOver;
     private List<GameObject> split;
     private int mistakesMade;
 
@@ -34,11 +34,20 @@ public class Mistakes : MonoBehaviour
     }
 
     public void drawElements()
+    {
+        
+        if (mistakesMade < split.Count)
         {
-            if (mistakesMade < split.Count)
+            Instantiate(split[mistakesMade], split[mistakesMade].transform.position, split[mistakesMade].transform.rotation);
+            mistakesMade++;
+            PlayerPrefs.SetInt("GameMistakes", mistakesMade);
+            if (mistakesMade == split.Count)
             {
-                Instantiate(split[mistakesMade], split[mistakesMade].transform.position, split[mistakesMade].transform.rotation);
-                mistakesMade++;
+                gameOver.SetActive(true);
+                gameObject.GetComponent<SetStatistics>().LoseGameLevel();
             }
         }
+        
+
+    }
 }

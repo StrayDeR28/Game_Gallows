@@ -18,13 +18,21 @@ public class Builder : MonoBehaviour
     private string word;
     private int length;
     public GameObject start;
-
-    private void Awake()
+    public void Awake()
     {
+        GetDifficultyParametrs();
         buildGameScene();
     }
-
-    public void buildGameScene()
+    public void GetDifficultyParametrs()// метод для получения значений из Фединого кода. Сначала закомментите, когда сольём - раскоментим и всё заработает
+    {
+        minLength = StaticParametrHolder._minlength;
+        maxLength = StaticParametrHolder._maxlength;
+        mistakes = StaticParametrHolder._mistakes;
+        section = StaticParametrHolder._section;
+        PlayerPrefs.SetString("GameSection", section);
+    }
+   
+public void buildGameScene()
     {
         buildWord();
         buildGallow();
@@ -34,8 +42,8 @@ public class Builder : MonoBehaviour
     public void buildWord()
     {
         word = start.GetComponent<Word>().createWord(section, minLength, maxLength);
-        Debug.Log(word);
-        
+        PlayerPrefs.SetString("GameWord", word);
+
     }
 
     public void buildGallow()
