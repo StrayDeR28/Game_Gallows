@@ -24,7 +24,7 @@ public class Word : MonoBehaviour
        
         StreamReader dictionary;
         string lenghtRange = minRange.ToString() + '-' + maxRange.ToString();
-        if (section == "Животные") dictionary = new StreamReader("Assets/Data/Animals.txt", Encoding.GetEncoding(1251));
+        if (section == "Р–РёРІРѕС‚РЅС‹Рµ") dictionary = new StreamReader("Assets/Data/Animals.txt", Encoding.GetEncoding(1251));
         else dictionary = new StreamReader("Assets/Data/Plants.txt", Encoding.GetEncoding(1251));
         word = findWord(dictionary, lenghtRange);
         
