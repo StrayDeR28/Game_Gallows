@@ -35,7 +35,6 @@ public class Mistakes : MonoBehaviour
 
     public void drawElements()
     {
-        
         if (mistakesMade < split.Count)
         {
             Instantiate(split[mistakesMade], split[mistakesMade].transform.position, split[mistakesMade].transform.rotation);
@@ -47,7 +46,5 @@ public class Mistakes : MonoBehaviour
                 gameObject.GetComponent<SetStatistics>().LoseGameLevel();
             }
         }
-        
-
     }
 }

@@ -23,7 +23,7 @@ public class Builder : MonoBehaviour
         GetDifficultyParametrs();
         buildGameScene();
     }
-    public void GetDifficultyParametrs()// метод для получения значений из Фединого кода. Сначала закомментите, когда сольём - раскоментим и всё заработает
+    public void GetDifficultyParametrs()
     {
         minLength = StaticParametrHolder._minlength;
         maxLength = StaticParametrHolder._maxlength;
@@ -43,24 +43,16 @@ public void buildGameScene()
     {
         word = start.GetComponent<Word>().createWord(section, minLength, maxLength);
         PlayerPrefs.SetString("GameWord", word);
-
     }
-
     public void buildGallow()
     {
         start.GetComponent<Mistakes>().gallowSpliting(mistakes, gallowPart4Mistake, gallowPart8Mistake, gallowPart12Mistake);
-
-
     }
 
     public void DrawInputElements()
     {
         start.GetComponent<DrawInputFields>().GameStart(word, section);
     }
-
-    
-
- 
 }
     
    

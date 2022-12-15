@@ -13,15 +13,15 @@ public class ChooseSectionDropdown : MonoBehaviour
     {
         if (dropdown.value == ((int)Section.Section1))
         {
-            _button.GetComponent<DifficultyParametrsSetters>().SetSection("Животные");
+            _button.GetComponent<DifficultyParametrsSetters>().SetSection("Р–РёРІРѕС‚РЅС‹Рµ");
         }
         else if (dropdown.value == ((int)Section.Section2))
         {
-            _button.GetComponent<DifficultyParametrsSetters>().SetSection("Растения");
+            _button.GetComponent<DifficultyParametrsSetters>().SetSection("Р Р°СЃС‚РµРЅРёСЏ");
         }
         else if (dropdown.value == ((int)Section.Section3))
         {
-            _button.GetComponent<DifficultyParametrsSetters>().SetSection("Радиотехника");
+            _button.GetComponent<DifficultyParametrsSetters>().SetSection("Р Р°РґРёРѕС‚РµС…РЅРёРєР°");
         }
     }
 }
