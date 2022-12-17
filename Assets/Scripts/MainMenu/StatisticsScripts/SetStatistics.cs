@@ -9,7 +9,7 @@ public class SetStatistics : MonoBehaviour
     {
         LastGameResult("Игра прервалась");
     }
-    [SerializeField] private GameObject _builder;
+   
     public void PassGameLevel()
     {
         LevelComplete();
