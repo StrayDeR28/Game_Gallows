@@ -7,7 +7,6 @@ public class Mistakes : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     private List<GameObject> split;
     private int mistakesMade;
-
     public int getMistakesMade()
     {
         return mistakesMade;
@@ -18,21 +17,16 @@ public class Mistakes : MonoBehaviour
         if (numberOfMistakes == 4)
         {
             split = fourParts;
-
         }
         else if (numberOfMistakes == 8)
         {
             split = eightParts;
-
         }
         else
         {
             split = twelveParts;
-
         }
-
     }
-
     public void drawElements()
     {
         if (mistakesMade < split.Count)
@@ -42,7 +36,7 @@ public class Mistakes : MonoBehaviour
             PlayerPrefs.SetInt("GameMistakes", mistakesMade);
             if (mistakesMade == split.Count)
             {
-                gameOver.SetActive(true);
+                gameOver.GetComponent<ShowGameResult>().ShowResult();
                 gameObject.GetComponent<SetStatistics>().LoseGameLevel();
             }
         }

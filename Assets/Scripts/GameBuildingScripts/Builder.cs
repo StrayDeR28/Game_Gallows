@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Text;
-
+using UnityEngine.SceneManagement;
 
 public class Builder : MonoBehaviour
 {
@@ -52,6 +52,14 @@ public void buildGameScene()
     public void DrawInputElements()
     {
         start.GetComponent<DrawInputFields>().GameStart(word, section);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
     

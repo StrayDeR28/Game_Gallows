@@ -57,7 +57,7 @@ public class DrawInputFields : MonoBehaviour
 
         if (rightCharacter == pword.Length)
         {
-            gameWin.SetActive(true);
+            gameWin.GetComponent<ShowGameResult>().ShowResult();
             gameObject.GetComponent<SetStatistics>().PassGameLevel();
         }
 
