@@ -10,15 +10,7 @@ public class Word : MonoBehaviour
 {
     private string word;
 
-   public Word()
-    {
-        word = null;
-    }
-
-    public void Print(int m)
-    {
-        Debug.Log(2);
-    }
+   
     public string createWord(string section, int minRange, int maxRange)
     {   
        
@@ -26,9 +18,9 @@ public class Word : MonoBehaviour
         string lenghtRange = minRange.ToString() + '-' + maxRange.ToString();
         if (section == "Животные") dictionary = new StreamReader("Assets/Data/Animals.txt");
         else if (section == "Растения") dictionary = new StreamReader("Assets/Data/Plants.txt");
-        else dictionary = new StreamReader("Assets/Data/Plants.txt");
+        else dictionary = new StreamReader("Assets/Data/Radiotechnic.txt");
         word = findWord(dictionary, lenghtRange);
-        
+        word=word.Replace("ё", "e");
         return (word);
     }
 
@@ -43,8 +35,8 @@ public class Word : MonoBehaviour
             buffer = dictionary.ReadLine();
         }
         numberOfWord = int.Parse(dictionary.ReadLine());
-        
-        randomChoise = UnityEngine.Random.Range(1, numberOfWord);
+        System.Random rnd = new System.Random();
+        randomChoise = rnd.Next(1, numberOfWord+1);
         while (randomChoise != 0)
         {
             buffer = dictionary.ReadLine();
@@ -55,10 +47,7 @@ public class Word : MonoBehaviour
     }
 
 
-    public void Print()
-    {
-        Debug.Log(word);
-    }
+  
     
 
 }
