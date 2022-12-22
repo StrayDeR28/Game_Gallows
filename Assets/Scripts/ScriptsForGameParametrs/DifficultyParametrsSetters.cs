@@ -23,5 +23,12 @@ public class DifficultyParametrsSetters : MonoBehaviour
     public void SetLvlIndex(int value)
     {
         StaticParametrHolder._lvlIndex = value;
-    }   
+    }
+    void Awake()
+    {
+        SetMinLength(3);
+        SetMaxLength(5);
+        SetMistakes(12);
+        SetSection("Животные");
+    }
 }
