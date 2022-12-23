@@ -26,11 +26,30 @@ public class ButtonInteractable : MonoBehaviour
                 _buttonHard.interactable = true;
                 break ;
         }
+        ChangeAlpha(_buttonMedium);
+        ChangeAlpha(_buttonHard);
     }
     public void ResetButton()
     {
         _buttonMedium.interactable = false;
         _buttonHard.interactable = false;
+        ChangeAlpha(_buttonMedium);
+        ChangeAlpha(_buttonHard);
         PlayerPrefs.DeleteKey("LevelComplete");
+    }
+    private void ChangeAlpha(Button button)//Изменение цвета неактивных кнопок
+    {
+        if(button.interactable == false)
+        {
+            Color tempColor = button.GetComponentInChildren<Text>().color;
+            tempColor.a = 0.65f;
+            button.GetComponentInChildren<Text>().color = tempColor;
+        }
+        else if(button.interactable == true)
+        {
+            Color tempColor = button.GetComponentInChildren<Text>().color;
+            tempColor.a = 1f;
+            button.GetComponentInChildren<Text>().color = tempColor;
+        }
     }
 }
