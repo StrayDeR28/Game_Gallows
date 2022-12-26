@@ -32,6 +32,7 @@ public class Mistakes : MonoBehaviour
         if (mistakesMade < split.Count)
         {
             Instantiate(split[mistakesMade], split[mistakesMade].transform.position, split[mistakesMade].transform.rotation);
+
             mistakesMade++;
             PlayerPrefs.SetInt("GameMistakes", mistakesMade);
             if (mistakesMade == split.Count)
