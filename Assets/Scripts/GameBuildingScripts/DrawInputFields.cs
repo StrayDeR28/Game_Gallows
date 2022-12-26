@@ -29,7 +29,7 @@ public class DrawInputFields : MonoBehaviour
         {
             fields[i] = Instantiate(prefab, transform.position, transform.rotation, transform.Find("InputField")) as GameObject;
             fields[i].name = i.ToString();
-            fields[i].transform.localPosition = new Vector3(15 * (2 * i - wordLength + 1), 0, 0);
+            fields[i].transform.localPosition = new Vector3(35 * (2 * i - wordLength + 1), 0, 0);
         }
     }
 
@@ -41,17 +41,19 @@ public class DrawInputFields : MonoBehaviour
             int index = pword.IndexOf(character);
             while (index != -1)
             {
-                fields[index].GetComponent<Image>().sprite = GameObject.Find(character).GetComponent<Image>().sprite;
-                fields[index].GetComponent<Image>().color = Color.yellow;
+                //fields[index].GetComponent<Image>().sprite = GameObject.Find(character).GetComponent<Image>().sprite;
+                //fields[index].GetComponent<Image>().color = Color.yellow;
+                fields[index].GetComponent<Text>().text = character;
                 rightCharacter++;
-                GameObject.Find(character).GetComponent<Image>().color = Color.green;
+                GameObject.Find(character).transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find(character).GetComponent<Button>().interactable = false;
                 index = pword.IndexOf(character, index + 1);
             }
         }
         else
         {
-            GameObject.Find(character).GetComponent<Image>().color = Color.red;
+            //GameObject.Find(character).GetComponent<Image>().color = Color.red;
+            GameObject.Find(character).transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find(character).GetComponent<Button>().interactable = false;
             forMistakes.GetComponent<Mistakes>().drawElements();
             forMistakes.GetComponent<AudioSource>().Play();
