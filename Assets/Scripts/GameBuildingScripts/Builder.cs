@@ -19,8 +19,9 @@ public class Builder : MonoBehaviour
     private int length;
     public GameObject start;
     public void Awake()
-    {
+    {   
         GetDifficultyParametrs();
+
         buildGameScene();
     }
     public void GetDifficultyParametrs()
@@ -36,6 +37,7 @@ public void buildGameScene()
     {
         buildWord();
         buildGallow();
+        PlayerPrefs.SetInt("GameMistakes", 0);
         DrawInputElements();
     }
 
@@ -45,7 +47,7 @@ public void buildGameScene()
         PlayerPrefs.SetString("GameWord", word);
     }
     public void buildGallow()
-    {
+    {   
         start.GetComponent<Mistakes>().gallowSpliting(mistakes, gallowPart4Mistake, gallowPart8Mistake, gallowPart12Mistake);
     }
 

@@ -6,7 +6,7 @@ public class Mistakes : MonoBehaviour
 {
     [SerializeField] private GameObject gameOver;
     private List<GameObject> split;
-    private int mistakesMade;
+    private int mistakesMade = 0;
     public int getMistakesMade()
     {
         return mistakesMade;
@@ -32,6 +32,7 @@ public class Mistakes : MonoBehaviour
         if (mistakesMade < split.Count)
         {
             Instantiate(split[mistakesMade], split[mistakesMade].transform.position, split[mistakesMade].transform.rotation);
+
             mistakesMade++;
             PlayerPrefs.SetInt("GameMistakes", mistakesMade);
             if (mistakesMade == split.Count)

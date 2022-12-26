@@ -16,7 +16,8 @@ public class DrawInputFields : MonoBehaviour
 
     public void GameStart(string word, string section)
     {
-        pword = word; 
+        pword = word;
+        Debug.Log(pword);
         InputFieldsDrawing(pword.Length, section);
     }
 
@@ -53,6 +54,7 @@ public class DrawInputFields : MonoBehaviour
             GameObject.Find(character).GetComponent<Image>().color = Color.red;
             GameObject.Find(character).GetComponent<Button>().interactable = false;
             forMistakes.GetComponent<Mistakes>().drawElements();
+            forMistakes.GetComponent<AudioSource>().Play();
         }
 
         if (rightCharacter == pword.Length)
