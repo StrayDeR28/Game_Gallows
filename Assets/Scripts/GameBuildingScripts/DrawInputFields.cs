@@ -17,7 +17,6 @@ public class DrawInputFields : MonoBehaviour
     public void GameStart(string word, string section)
     {
         pword = word;
-        Debug.Log(pword);
         InputFieldsDrawing(pword.Length, section);
     }
 

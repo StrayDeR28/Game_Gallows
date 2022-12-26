@@ -6,7 +6,7 @@ public class Mistakes : MonoBehaviour
 {
     [SerializeField] private GameObject gameOver;
     private List<GameObject> split;
-    private int mistakesMade = 0;
+    private int mistakesMade;
     public int getMistakesMade()
     {
         return mistakesMade;
