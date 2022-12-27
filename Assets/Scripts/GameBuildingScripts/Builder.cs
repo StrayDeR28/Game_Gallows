@@ -21,7 +21,6 @@ public class Builder : MonoBehaviour
     public void Awake()
     {   
         GetDifficultyParametrs();
-
         buildGameScene();
     }
     public void GetDifficultyParametrs()
