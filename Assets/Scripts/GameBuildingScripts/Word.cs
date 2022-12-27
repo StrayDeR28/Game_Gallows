@@ -20,9 +20,6 @@ public class Word : MonoBehaviour
         else if (section == "Растения") dictionary = Resources.Load<TextAsset>("Plants");
         else dictionary = Resources.Load<TextAsset> ("Radiotechnic");
         word = findWord(dictionary, lenghtRange);
-        string a = dictionary.text;
-        Debug.Log(a);
-        word=word.Replace("ё", "e");
         return (word);
     }
 
