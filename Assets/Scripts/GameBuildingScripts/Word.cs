@@ -14,36 +14,42 @@ public class Word : MonoBehaviour
     public string createWord(string section, int minRange, int maxRange)
     {   
        
-        StreamReader dictionary;
+        TextAsset dictionary;
         string lenghtRange = minRange.ToString() + '-' + maxRange.ToString();
-        if (section == "Животные") dictionary = new StreamReader("Assets/Data/Animals.txt");
-        else if (section == "Растения") dictionary = new StreamReader("Assets/Data/Plants.txt");
-        else dictionary = new StreamReader("Assets/Data/Radiotechnic.txt");
+        if (section == "Животные") dictionary = Resources.Load<TextAsset>("Animals");
+        else if (section == "Растения") dictionary = Resources.Load<TextAsset>("Plants");
+        else dictionary = Resources.Load<TextAsset> ("Radiotechnic");
         word = findWord(dictionary, lenghtRange);
+        string a = dictionary.text;
+        Debug.Log(a);
         word=word.Replace("ё", "e");
         return (word);
     }
 
-    public string findWord(StreamReader dictionary, string lenghtRange)
+    public string findWord(TextAsset dictionary, string lenghtRange)
     {
+        List<string> lines = new List<string>(dictionary.text.Split("\n"));
+        for (int j = 0; j < lines.Count; j++) lines[j] = lines[j].Substring(0, lines[j].Length - 1);
         int numberOfWord;
         int randomChoise;
-        string buffer;
-        buffer = dictionary.ReadLine();
-        while (buffer != lenghtRange)
-        {
-            buffer = dictionary.ReadLine();
+        int i = 0;  
+        
+        while (lines[i] != lenghtRange)
+        { 
+            i++;
         }
-        numberOfWord = int.Parse(dictionary.ReadLine());
+        i++;
+        numberOfWord = int.Parse(lines[i]);
+        
         System.Random rnd = new System.Random();
         randomChoise = rnd.Next(1, numberOfWord+1);
         while (randomChoise != 0)
         {
-            buffer = dictionary.ReadLine();
+            i++;
             randomChoise--;
         }
-        
-        return (buffer);
+
+        return (lines[i]);
     }
 
 
